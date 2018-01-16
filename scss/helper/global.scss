@@ -1,0 +1,183 @@
+body{
+    font-family: $font-family;
+    line-height: 1.4;
+    
+}
+
+h1,h2,h3{
+    line-height: 1.2;
+}
+
+.container{
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: $gutter;
+    padding-left: $gutter;
+}
+a{
+    transition: .15s;
+}
+button{
+    background-color:white;
+}
+
+.select select,.button,.text{
+    font-family: inherit;
+    border-radius: $border-radius;
+    border: 0;
+    font-weight: bold;
+    background-color: #fff;
+    
+}
+
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: $finger-size;
+    background-color: $color-blue;
+    color: white;
+    text-align: center;
+   
+    &-icon{
+        color: black;
+        padding-left: 0;
+        padding-right: 0;
+        width: $finger-size;
+        justify-content: center;
+        background-color: transparent;
+    }
+
+    &-full{
+        width: 100%;
+       
+    }
+
+    &-navy{
+        background-color: $color-navy;
+    }
+
+}
+.icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
+
+.text{
+    min-height: $finger-size;
+    color: $color-navy;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+
+    &::placeholder{
+        color:rgba($color: $color-navy, $alpha: .5);
+    }
+}
+
+.select{
+    position: relative;
+    right: 0;
+    left: 0;
+    color: $color-navy;
+
+   select{
+    appearance: none;
+    display: inline-block;
+    padding-right: 30px;
+    width: 100%;
+    height:$finger-size; 
+    width: 100%;
+   }
+
+   &-icon{
+       pointer-events: none;
+       z-index: 1;
+       position: absolute;
+       right: 10px;
+       top:50%;
+       transform: translateY(-50%);
+   }
+}
+
+.form-item{
+    position: relative;
+
+    &-icon{
+        pointer-events: none;
+        z-index: 1;
+        position: absolute;
+        left: 5px;
+        top:50%;
+        color: $color-navy;
+        transform: translateY(-50%);
+
+    }
+    .text{
+        padding-left: 30px;
+    }
+
+    .select select{
+        padding-left: 30px;
+    }
+}
+
+.form-description{
+    margin-top: 8px; 
+    font-size: $font-size-small;
+    @include mq(){
+        font-size: $font-size;
+        margin-top: 20px;
+    }
+}
+
+.form-checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.checkbox{
+    position: relative;
+    display: flex;
+
+    input{
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        top: 0;
+        left: 0;
+    }
+
+    &:before{
+        content: "";
+        display: inline-block;
+        font-size: 20px;
+        height: 1em;
+        width: 1em;
+        border: 2px solid white;
+    }
+
+    .icon{
+        display: none;
+        position: absolute;
+        left: 50px;
+        top: 50px;
+        transform: translate(-280%,-250%);
+        margin-top: -2px;
+        margin-left:4px;
+        width: 18px;
+        height: 18px;
+    }
+
+    input:checked + .icon{
+        display: block;
+    }
+    
+}

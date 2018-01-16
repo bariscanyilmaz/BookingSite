@@ -1,0 +1,21 @@
+html
+    head
+        title
+        |         
+        meta(charset='UTF-8')
+        |         
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        |         
+        link(href='./main.css', rel='stylesheet')
+    body
+        include icons.pug
+        include header.pug
+        include navigation.pug
+
+        main.Main
+            block content
+
+
+        script(src='./js/jquery-3.2.1.js')
+        script(src='./js/flickity.pkgd.min.js')
+        script(src='./js/main.js')
